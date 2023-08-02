@@ -10,9 +10,12 @@
             height:100vh;
             background-color: #eee;
         }
-        *{
-            border: 1px solid black;
+        .shadow{
+            box-shadow:rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+                       rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+                       rgb(0 0 0 / 12%) 0px 1px 3px 0px;
         }
+      
         .flex{
             display: flex;
         }
@@ -22,13 +25,81 @@
         .flex1{
             flex:1;
         }
+        .column{
+            flex-direction: column;
+        }
+        .margin8{
+            margin: 8px;
+            margin-right: 8px;
+            margin-top: 8px
+        }
+        .navigation{
+            padding: 10px 20px;
+            border-bottom: 1px solid rgb(190, 190, 190);
+            font-size: 14px;
+            color: #666;
+        }
+       
     </style>
 </head>
 <body class="flex">
     <!-- 侧边栏 -->
-    <div style="width:200px" class="white"></div>
+    <div style="width:200px;z-index: 2;" class="white shadow">
+        <!-- 头像栏 -->
+        <div style="padding: 10px;align-items: center; justify-content: center;border-bottom: 1px solid #999;" class="flex">
+            <img src="logo.png" alt="logo" width="32px" height="32px">
+            <div style="margin-left: 8pt;">SoundsBee</div>
+        </div>
+
+        <!-- 导航栏 -->
+        <div class="flex1">
+            <div class="navigation">导航</div>
+            <div class="navigation">导航</div>
+            <div class="navigation">导航</div>
+            <div class="navigation">导航</div>
+        </div>
+    </div>
+        
     <!-- 主区域 -->
-    <div class="flex1"></div>
+    <div class="flex1 flex column">
+        <!-- #头部栏 -->
+        <div style="height:60px;z-index: 1;" class="white shadow">
+
+        </div>
+        <!-- 内容区 -->
+        <div style="overflow: auto;" class="flex1 flex">
+            <!-- #左区 -->
+            <div style="flex:3" class="flex column margin8">
+                <!-- 数据区 -->
+                <div class="flex">
+                    <!-- 数据块 -->
+                    <div style="height: 100px;" class="flex1 white margin8 shadow"></div>
+                    <div style="height: 100px;" class="flex1 white margin8 shadow"></div>
+                    <div style="height: 100px;" class="flex1 white margin8 shadow"></div>
+                    <div style="height: 100px;" class="flex1 white margin8 shadow"></div>
+                </div>
+                <!-- 列表区 -->
+                <div class="flex column">
+                    <!-- 列表项-->
+                    <div style="height: 160px;" class="white margin8 shadow"></div>
+                    <div style="height: 160px;" class="white margin8 shadow"></div>
+                    <div style="height: 160px;" class="white margin8 shadow"></div>
+
+                </div>
+            </div>
+            <!-- #右区 -->
+            <div style="flex:1" class="flex column margin8">
+                <!-- 提示区 -->
+                <div style="height: 150px;" class="white shadow margin8">
+
+                </div>
+                <!-- 消息区 -->
+                <div style="height: 300px;" class="white shadow margin8">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
